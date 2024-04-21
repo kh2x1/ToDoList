@@ -54,39 +54,51 @@ function addTaskToDOM(value) {
 
     var checkbox = document.createElement("input");
     checkbox.type="checkbox"
+    checkbox.style.width="20px"
+    checkbox.style.height="20px"
     li.appendChild(checkbox)
 
-    var h3 = document.createElement("h3")
-    li.appendChild(h3)
-    h3.textContent = value;
-    h3.style.color ="white"
+    var h2 = document.createElement("h2")
+    li.appendChild(h2)
+    h2.textContent = value;
+    h2.style.color ="white"
+    h2.style.fontWeight="bold"
 
-    var button = document.createElement("input");
-    div2.appendChild(button)
-    button.type="button";
-    button.value="Delete"
-    button.style.display="flex"
-    button.style.justifyContent="center"
-    button.style.alignItems="center"
-    button.style.backgroundColor="red"
-    button.style.color="white"
-    button.style.padding="5px"
-    button.style.borderRadius="20px"
-    button.style.width="100%"
+
+    // var button = document.createElement("input");
+    // div2.appendChild(button)
+    // button.type="button";
+    // button.value="Delete"
+    // button.style.display="flex"
+    // button.style.justifyContent="center"
+    // button.style.alignItems="center"
+    // button.style.backgroundColor="red"
+    // button.style.color="white"
+    // button.style.padding="5px"
+    // button.style.borderRadius="20px"
+    // button.style.width="100%"
+
+    var img = document.createElement("img")
+    img.src="icons8-close.svg"
+    img.style.cursor="pointer"
+    img.style.width="30px"
+    img.style.height="30px"
+
+    div2.appendChild(img)
 
     checkbox.onclick = function(){
         if (checkbox.checked) {
-            h3.style.color= "red"
-            h3.style.textDecoration = "line-through"
+            h2.style.color= "red"
+            h2.style.textDecoration = "line-through"
         } else {
-            h3.style.color= "white"
-            h3.style.textDecoration = "none"
+            h2.style.color= "white"
+            h2.style.textDecoration = "none"
         }
         updateLocalStorage();
     }
 
-    button.onclick=function() {
-        button.style.display="none"
+    img.onclick=function() {
+        img.style.display="none"
         ul.style.display="none"
         li.style.display="none"
         // Remove task from tasks array

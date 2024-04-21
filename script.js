@@ -61,7 +61,7 @@ function addTaskToDOM(value) {
     var h2 = document.createElement("h2")
     li.appendChild(h2)
     h2.textContent = value;
-    h2.style.color ="white"
+    h2.style.color ="black"
     h2.style.fontWeight="bold"
 
 
@@ -111,8 +111,38 @@ function addTaskToDOM(value) {
         // Save tasks to localStorage
         updateLocalStorage();
     }
+
 }
 
 function updateLocalStorage() {
     localStorage.setItem("tasks", JSON.stringify(tasks));
 }
+
+var dark = document.getElementById("dark")
+dark.addEventListener("click",function(){
+    dark.style.display="none"
+    light.style.display="block"
+    
+})
+
+var light = document.getElementById("light")
+light.addEventListener("click",function(){
+    light.style.display="none"
+    dark.style.display="block"
+})
+
+
+    function myFunction() {
+        let element = document.body;
+        element.classList.toggle("dark-mode")
+
+    }
+
+    function myFun() {
+        let element = document.body;
+        element.classList.toggle("dark-mode")
+
+    }
+
+
+
